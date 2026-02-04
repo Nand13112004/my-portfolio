@@ -4,7 +4,7 @@ import path from "path"
 import { componentTagger } from "lovable-tagger"
 
 export default defineConfig(({ mode }) => ({
-  // ✅ REQUIRED for GitHub Pages
+  // ✅ REQUIRED for Netlify
   base: "/",
 
   server: {
