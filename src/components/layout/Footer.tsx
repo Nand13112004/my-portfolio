@@ -12,8 +12,7 @@ export const Footer = () => {
             transition={{ duration: 0.6 }}
             className="text-sm text-muted-foreground flex items-center gap-1"
           >
-            Crafted with <Heart className="w-4 h-4 text-red-500 fill-red-500" />{" "}
-            by Nand Delvadiya
+            Created & Developed by Nand Delvadiya
           </motion.p>
           <motion.p
             initial={{ opacity: 0 }}
