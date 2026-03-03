@@ -22,7 +22,7 @@ const projects = [
     category: "Full-Stack Web Application",
     liveUrl: "https://varnitours.com",
     problem:
-      "Travel agencies needed a way to showcase packages and handle inquiries without complex booking systems, with non-technical admins managing content.",
+      "A travel agency needed a modern digital presence to showcase dynamic tour packages and manage inquiries efficiently. The challenge was building a system that non-technical staff could update without developer dependency, while maintaining high SEO performance and fast load times.",
     constraints: [
       "Non-technical admin users",
       "SEO critical for discovery",
