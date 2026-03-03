@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
+import axios from 'axios';
 
 const socialLinks = [
   { icon: Github, label: "GitHub", href: "https://github.com/Nand13112004" },
@@ -28,16 +28,31 @@ export const ContactSection = () => {
     const subject = formData.get("subject") as string;
     const message = formData.get("message") as string;
 
-    const { error } = await supabase
-      .from("contact_messages")
-      .insert({ name, email, subject, message });
-
-    if (error) {
+    try {
+      // Try Vercel API first, then Netlify
+      let apiUrl = '/api/contact'; // Vercel
+      
+      // If on Netlify, use the Netlify function
+      if (window.location.hostname.includes('netlify.app')) {
+        apiUrl = '/.netlify/functions/contact';
+      }
+      
+      const response = await axios.post(apiUrl, {
+        name,
+        email,
+        subject,
+        message
+      });
+      
+      if (response.data.success) {
+        toast.success("Message sent! I'll get back to you soon.");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
+    } catch (error) {
       console.error("Error submitting message:", error);
       toast.error("Failed to send message. Please try again.");
-    } else {
-      toast.success("Message sent! I'll get back to you soon.");
-      (e.target as HTMLFormElement).reset();
     }
     
     setIsSubmitting(false);
