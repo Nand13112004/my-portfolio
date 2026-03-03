@@ -29,12 +29,16 @@ export const ContactSection = () => {
     const message = formData.get("message") as string;
 
     try {
-      // Try Vercel API first, then Netlify
-      let apiUrl = '/api/contact'; // Vercel
+      // For local development, use local API server
+      // For production, use serverless functions
+      let apiUrl;
       
-      // If on Netlify, use the Netlify function
-      if (window.location.hostname.includes('netlify.app')) {
-        apiUrl = '/.netlify/functions/contact';
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        apiUrl = 'http://localhost:3001/api/contact'; // Local API server
+      } else if (window.location.hostname.includes('netlify.app')) {
+        apiUrl = '/.netlify/functions/contact'; // Netlify
+      } else {
+        apiUrl = '/api/contact'; // Vercel or others
       }
       
       const response = await axios.post(apiUrl, {

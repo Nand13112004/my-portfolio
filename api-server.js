@@ -1,10 +1,21 @@
+import express from 'express';
+import cors from 'cors';
 import { MongoClient } from 'mongodb';
 
+const app = express();
+const PORT = 3001;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// MongoDB connection
 const MONGODB_URI = process.env.MONGODB_URI;
 const MONGODB_DB_NAME = process.env.MONGODB_DB_NAME || 'portfolio';
 
 if (!MONGODB_URI) {
-  throw new Error('MONGODB_URI environment variable is required');
+  console.error('MONGODB_URI environment variable is required');
+  process.exit(1);
 }
 
 let cachedClient = null;
@@ -30,12 +41,8 @@ async function connectToDatabase() {
   }
 }
 
-export default async function handler(req, res) {
-  // Only allow POST requests
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
+// Routes
+app.post('/api/contact', async (req, res) => {
   try {
     const { name, email, subject, message } = req.body;
 
@@ -55,13 +62,33 @@ export default async function handler(req, res) {
 
     const result = await db.collection('contact_messages').insertOne(contactMessage);
     
-    return res.status(201).json({ 
+    res.status(201).json({ 
       success: true, 
       message: 'Contact message saved successfully',
       id: result.insertedId 
     });
   } catch (error) {
     console.error('Error saving contact message:', error);
-    return res.status(500).json({ error: 'Failed to save contact message' });
+    res.status(500).json({ error: 'Failed to save contact message' });
   }
-}
+});
+
+// Health check
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'OK', timestamp: new Date().toISOString() });
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`Local API server running on port ${PORT}`);
+  console.log(`API endpoint: http://localhost:${PORT}/api/contact`);
+});
+
+// Graceful shutdown
+process.on('SIGINT', async () => {
+  if (cachedClient) {
+    await cachedClient.close();
+    console.log('MongoDB connection closed');
+  }
+  process.exit(0);
+});
