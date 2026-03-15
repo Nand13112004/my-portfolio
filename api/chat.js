@@ -1,74 +1,21 @@
-import express from 'express';
-import { MongoClient } from 'mongodb';
-import cors from 'cors';
 import { ChromaClient } from 'chromadb';
 import Bytez from 'bytez.js';
 import { DefaultEmbeddingFunction } from "@chroma-core/default-embed";
 
-const app = express();
-const PORT = 3001;
+export default async function handler(req, res) {
+  // CORS headers
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-// MongoDB connection
-const MONGODB_URI = process.env.MONGODB_URI ;
-const MONGODB_DB_NAME = process.env.MONGODB_DB_NAME;
-
-let client;
-let db;
-
-async function connectToDatabase() {
-  if (client && db) {
-    return { client, db };
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
   }
 
-  try {
-    client = new MongoClient(MONGODB_URI);
-    await client.connect();
-    db = client.db(MONGODB_DB_NAME);
-    console.log('Connected to MongoDB');
-    return { client, db };
-  } catch (error) {
-    console.error('Failed to connect to MongoDB:', error);
-    throw error;
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
   }
-}
 
-// Routes
-app.post('/api/contact', async (req, res) => {
-  try {
-    const { name, email, subject, message } = req.body;
-
-    if (!name || !email || !subject || !message) {
-      return res.status(400).json({ error: 'All fields are required' });
-    }
-
-    const { db } = await connectToDatabase();
-    const contactMessage = {
-      name,
-      email,
-      subject,
-      message,
-      is_read: false,
-      created_at: new Date().toISOString()
-    };
-
-    const result = await db.collection('contact_messages').insertOne(contactMessage);
-    
-    res.status(201).json({ 
-      success: true, 
-      message: 'Contact message saved successfully',
-      id: result.insertedId 
-    });
-  } catch (error) {
-    console.error('Error saving contact message:', error);
-    res.status(500).json({ error: 'Failed to save contact message' });
-  }
-});
-
-app.post('/api/chat', async (req, res) => {
   try {
     const { message } = req.body;
     if (!message) {
@@ -136,29 +83,10 @@ ${message}
       return res.status(500).json({ error: 'AI generation failed' });
     }
 
-    res.json({ response: output.content });
+    return res.json({ response: output.content });
 
   } catch (error) {
     console.error('Error in /api/chat:', error);
-    res.status(500).json({ error: 'Failed to process chat request' });
+    return res.status(500).json({ error: 'Failed to process chat request' });
   }
-});
-
-// Health check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', timestamp: new Date().toISOString() });
-});
-
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
-// Graceful shutdown
-process.on('SIGINT', async () => {
-  if (client) {
-    await client.close();
-    console.log('MongoDB connection closed');
-  }
-  process.exit(0);
-});
+}

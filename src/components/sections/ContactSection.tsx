@@ -33,12 +33,12 @@ export const ContactSection = () => {
       // For production, use serverless functions
       let apiUrl;
       
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        apiUrl = 'http://localhost:3001/api/contact'; // Local API server
+      if (window.location.hostname === 'localhost') {
+        apiUrl = '/api/contact'; // Local API server (Vercel dev handles /api)
       } else if (window.location.hostname.includes('netlify.app')) {
         apiUrl = '/.netlify/functions/contact'; // Netlify
       } else {
-        apiUrl = '/api/contact'; // Vercel or others
+        apiUrl = '/api/contact'; // Vercel or others (Production API)
       }
       
       const response = await axios.post(apiUrl, {
