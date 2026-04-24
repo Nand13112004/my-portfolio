@@ -9,7 +9,7 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-4 md:px-10">
       {/* Navbar Container */}
       <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
         {/* Logo + Name */}
@@ -18,14 +18,14 @@ export const Navbar = () => {
           className="flex items-center"
         >
           <Image
-            src="/logo.png"
+            src={require('@/app/logo.png')}
             alt="Logo"
             width={70}
             height={70}
             draggable={false}
             className="cursor-pointer"
           />
-          <div className="hidden md:flex md:selffont-bold ml-[10px] text-gray-300">John Doe</div>
+          <div className="hidden md:flex font-bold ml-[10px] text-gray-300">Nand Delvadiya</div>
         </Link>
 
         {/* Web Navbar */}
@@ -41,31 +41,19 @@ export const Navbar = () => {
               </Link>
             ))}
 
-            {/* Source Code */}
+            {/* Resume Link */}
             <Link
-              href={LINKS.sourceCode}
+              href={LINKS.Resume}
               target="_blank"
               rel="noreferrer noopener"
               className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
             >
-              Source Code
+              Resume
             </Link>
           </div>
         </div>
 
-        {/* Social Icons (Web) */}
-        <div className="hidden md:flex flex-row gap-5">
-          {SOCIALS.map(({ link, name, icon: Icon }) => (
-            <Link
-              href={link}
-              target="_blank"
-              rel="noreferrer noopener"
-              key={name}
-            >
-              <Icon className="h-6 w-6 text-white" />
-            </Link>
-          ))}
-        </div>
+        {/* Removed Social Icons (Web) */}
 
         {/* Hamburger Menu */}
         <button
@@ -92,29 +80,17 @@ export const Navbar = () => {
               </Link>
             ))}
             <Link
-              href={LINKS.sourceCode}
+              href={LINKS.Resume}
               target="_blank"
               rel="noreferrer noopener"
               className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Source Code
+              Resume
             </Link>
           </div>
 
-          {/* Social Icons */}
-          <div className="flex justify-center gap-6 mt-6">
-            {SOCIALS.map(({ link, name, icon: Icon }) => (
-              <Link
-                href={link}
-                target="_blank"
-                rel="noreferrer noopener"
-                key={name}
-              >
-                <Icon className="h-8 w-8 text-white" />
-              </Link>
-            ))}
-          </div>
+          {/* Removed Social Icons (Mobile) */}
         </div>
       )}
     </div>

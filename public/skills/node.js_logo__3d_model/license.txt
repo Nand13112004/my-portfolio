@@ -1,0 +1,11 @@
+Model Information:
+* title:	Node.js Logo – 3D Model
+* source:	https://sketchfab.com/3d-models/nodejs-logo-3d-model-db41ca34efa54fa7b43af6d82e38abf9
+* author:	Alex human (https://sketchfab.com/alex-human)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Node.js Logo – 3D Model" (https://sketchfab.com/3d-models/nodejs-logo-3d-model-db41ca34efa54fa7b43af6d82e38abf9) by Alex human (https://sketchfab.com/alex-human) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

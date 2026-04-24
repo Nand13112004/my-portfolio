@@ -1,0 +1,348 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 574,
+      "max": [
+        0.022300876677036285,
+        0.04951953515410423,
+        0.0049999975599348545
+      ],
+      "min": [
+        -0.0006077224388718605,
+        -0.03737625479698181,
+        -0.004999998025596142
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 6888,
+      "componentType": 5126,
+      "count": 574,
+      "max": [
+        0.9998583793640137,
+        0.9998230934143066,
+        1.0
+      ],
+      "min": [
+        -0.55148845911026,
+        -0.7485156059265137,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 3144,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 13776,
+      "componentType": 5126,
+      "count": 618,
+      "max": [
+        0.001004378660582006,
+        0.04951953515410423,
+        0.004999998025596142
+      ],
+      "min": [
+        -0.022321537137031555,
+        -0.03828849270939827,
+        -0.004999998025596142
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 21192,
+      "componentType": 5126,
+      "count": 618,
+      "max": [
+        0.4561086893081665,
+        0.9998230934143066,
+        1.0
+      ],
+      "min": [
+        -0.99968022108078,
+        -0.7632901668548584,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 12576,
+      "componentType": 5125,
+      "count": 3408,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 28608,
+      "componentType": 5126,
+      "count": 622,
+      "max": [
+        0.0038255113177001476,
+        -0.028472838923335075,
+        0.005000001285225153
+      ],
+      "min": [
+        -0.001755068195052445,
+        -0.050240494310855865,
+        -0.005000001285225153
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 36072,
+      "componentType": 5126,
+      "count": 622,
+      "max": [
+        0.9923049807548523,
+        0.0,
+        1.0
+      ],
+      "min": [
+        -0.9951246976852417,
+        -0.9999978542327881,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 26208,
+      "componentType": 5125,
+      "count": 3528,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Alex human (https://sketchfab.com/alex-human)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/mongodb-logo-3d-model-a8120d58c978422fbce435260409687e",
+      "title": "MongoDB Logo — 3D Model"
+    },
+    "generator": "Sketchfab-16.99.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 40320,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 43536,
+      "byteOffset": 40320,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 83856,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "green-dark",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.00604883,
+          0.287441,
+          0.0781874,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "green-light",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.00518152,
+          0.401978,
+          0.0802199,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "gray",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.47932,
+          0.552011,
+          0.53948,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_2",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 7,
+            "POSITION": 6
+          },
+          "indices": 8,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "root"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "GLTF_SceneRootNode"
+    },
+    {
+      "children": [
+        4,
+        5,
+        6
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0003109077806584537,
+        -0.008263920433819294,
+        -0.00722387433052063,
+        1.0
+      ],
+      "name": "MongoDB_0"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_4"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_5"
+    },
+    {
+      "mesh": 2,
+      "name": "Object_6"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

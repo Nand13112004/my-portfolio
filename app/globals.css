@@ -37,21 +37,28 @@
 
 .button-primary {
   background: linear-gradient(
-      180deg,
-      rgba(60, 8, 126, 0) 0%,
-      rgba(60, 8, 126, 0.32) 100%
-    ),
-    rgba(113, 47, 255, 0.12);
-  box-shadow: inset 0 0 12px #bf97ff3d;
+      135deg,
+      rgba(113, 47, 255, 0.85) 0%,
+      rgba(60, 8, 126, 0.95) 100%
+    );
+  border: 1px solid rgba(191, 151, 255, 0.35);
+  box-shadow: inset 0 0 16px #bf97ff3d, 0 4px 20px rgba(113, 47, 255, 0.3);
+  padding: 10px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  display: block;
+  width: fit-content;
 }
 .button-primary:hover {
   background: linear-gradient(
-      180deg,
-      rgba(60, 8, 126, 0) 0%,
-      rgba(60, 8, 126, 0.42) 100%
-    ),
-    rgba(113, 47, 255, 0.24);
-  box-shadow: inset 0 0 12px #bf97ff70;
+      135deg,
+      rgba(130, 70, 255, 0.95) 0%,
+      rgba(80, 20, 180, 1) 100%
+    );
+  box-shadow: inset 0 0 16px #bf97ff70, 0 6px 28px rgba(113, 47, 255, 0.5);
+  transform: translateY(-1px);
+  transition: all 0.25s ease;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */

@@ -255,29 +255,139 @@ export const OTHER_SKILL = [
     width: 60,
     height: 60,
   },
+  {
+    skill_name: "Razorpay",
+    image: "razorpay.png",
+    width: 60,
+    height: 60,
+  },
 ] as const;
 
 export const PROJECTS = [
   {
-    title: "Modern Next.js 14 Portfolio",
+    title: "FleetFlow AI",
+    subtitle: "Autonomous Fleet Intelligence Platform",
+    category: "FULL STACK / AI",
     description:
-      'Embark on a journey through my professional evolution with the "Modern Next.js Portfolio" - a dynamic showcase of my skills, experiences, and passion for web development. Crafted with precision and powered by Next.js, this portfolio is more than just a static display; it\'s an immersive experience that reflects the cutting edge of modern web technologies.',
-    image: "/projects/project-1.png",
-    link: "https://example.com",
+      "AI-powered Fleet & Logistics Management System with real-time updates, predictive risk scoring, and Gemini API integration. Features JWT/RBAC auth, vehicle registry with ROI tracking, and trip lifecycle management.",
+    image: "/projects/fleetflow.png",
+    link: "https://fleetflow-silk-ten.vercel.app/",
+    github: "https://github.com/Nand13112004/Fleet_Flow",
+    features: [
+      "JWT & RBAC with 4 role types (Manager, Dispatcher, Safety, Financial)",
+      "Real-time vehicle & driver tracking via Socket.io",
+      "Predictive risk scoring with Gemini AI integration",
+      "Full trip lifecycle — create, dispatch, complete",
+      "CSV/PDF export & ROI calculation per vehicle",
+    ],
+    techStack: ["Next.js", "TypeScript", "MongoDB", "Node.js", "Socket.io", "Recharts"],
   },
   {
-    title: "Interactive Cards Portfolio",
+    title: "RevoraX",
+    subtitle: "Product Lifecycle & Change Management",
+    category: "FULL STACK / PLM",
     description:
-      'Step into the extraordinary world of my professional journey through the "Interactive Cards Portfolio" - an innovative and visually captivating platform that redefines the traditional portfolio experience. Ditching the conventional static layout, this portfolio leverages interactive cards to showcase my skills, projects, and personality in an engaging and dynamic manner.',
-    image: "/projects/project-2.png",
-    link: "https://example.com",
+      "Multi-tenant PLM web app for managing Products, Bills of Materials, and Engineering Change Orders with approval workflows, versioning, audit trails, and role-based access control.",
+    image: "/projects/revorax.png",
+    link: "https://github.com/Nand13112004/RevoraX",
+    github: "https://github.com/Nand13112004/RevoraX",
+    features: [
+      "Multi-tenant with 4 roles: Engineering, Approver, Operations, Admin",
+      "ECO approval workflow (New → Approval → Done)",
+      "Version-controlled Products and Bills of Materials",
+      "Full audit trail and traceability for compliance",
+      "Configurable ECO stages via Settings dashboard",
+    ],
+    techStack: ["React", "Vite", "Express", "MongoDB", "JWT"],
   },
   {
-    title: "Space Themed Website",
+    title: "MockMate AI",
+    subtitle: "AI-Powered Mock Interview Platform",
+    category: "FULL STACK / AI",
     description:
-      'Embark on an interstellar journey with my "Space Themed Website", a mesmerizing space-themed website that invites you to explore the cosmic wonders beyond our world. Immerse yourself in an awe-inspiring digital experience that blends cutting-edge design with the mysteries of the universe.',
-    image: "/projects/project-3.png",
-    link: "https://example.com",
+      "Enterprise-grade interview platform with real-time WebRTC communication, advanced proctoring, AI question generation, automated scoring, and comprehensive analytics for both candidates and interviewers.",
+    image: "/projects/mockmate.png",
+    link: "https://github.com/Nand13112004/Ai_Powered_Interview_System",
+    github: "https://github.com/Nand13112004/Ai_Powered_Interview_System",
+    features: [
+      "Real-time audio/video via WebRTC with session recovery",
+      "Advanced proctoring: face detection, tab-switch & fullscreen enforcement",
+      "AI dynamic question generation with context-aware follow-ups",
+      "Automated scoring, sentiment analysis & performance analytics",
+      "Dual answer storage with real-time interviewer monitoring",
+    ],
+    techStack: ["Next.js", "Node.js", "MongoDB", "Socket.io", "WebRTC", "Gemini AI"],
+  },
+  {
+    title: "Varni Tours",
+    subtitle: "Full-Stack Travel Booking Platform",
+    category: "FULL STACK / TRAVEL",
+    description:
+      "Comprehensive end-to-end travel booking platform for domestic and international tour packages, flights, hotels, visa assistance, cruises, and travel insurance with AI chatbot support.",
+    image: "/projects/varni.png",
+    link: "https://varnitours.com",
+    features: [
+      "Tour & travel booking for packages, flights, hotels, cruises",
+      "Dynamic search & filtering by destination, price, duration",
+      "Full SEO: sitemap.xml, robots.txt, Google Search Console",
+      "Integrated AI chatbot for real-time user support & lead capture",
+      "Fully responsive design across mobile, tablet, and desktop",
+    ],
+    techStack: ["React", "Node.js", "Express", "MongoDB", "SEO"],
+  },
+  {
+    title: "Mozzinoz",
+    subtitle: "Full Stack MERN Web Application",
+    category: "FULL STACK / MERN",
+    description:
+      "MERN-based full stack application demonstrating JWT authentication, dynamic React frontend, backend REST API integration, responsive UI design, and database-driven content management.",
+    image: "/projects/mozzinoz.png",
+    link: "https://mozzinoz.netlify.app/",
+    github: "https://github.com/Nand13112004/Mozzinoz",
+    features: [
+      "JWT-based authentication system",
+      "Dynamic React frontend with component architecture",
+      "Backend REST API with Node.js & Express",
+      "MongoDB database-driven content management",
+      "Fully responsive Tailwind CSS UI design",
+    ],
+    techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+  },
+  {
+    title: "ISLR",
+    subtitle: "Indian Sign Language Recognition System",
+    category: "AI / ML PROJECT",
+    description:
+      "Machine learning system for real-time recognition of Indian Sign Language gestures using CNN deep learning and computer vision. Converts sign language gestures into readable text, bridging the communication gap for hearing-impaired individuals.",
+    image: "/projects/islr.png",
+    link: "https://github.com/Nand13112004/ISLR",
+    github: "https://github.com/Nand13112004/ISLR",
+    features: [
+      "Real-time gesture capture and recognition",
+      "CNN model for accurate gesture prediction",
+      "Custom dataset collection and preprocessing pipeline",
+      "Convert gestures into readable text output",
+      "High accuracy model evaluation and testing",
+    ],
+    techStack: ["Python", "TensorFlow", "Keras", "OpenCV", "NumPy", "Pandas"],
+  },
+  {
+    title: "Space Portfolio",
+    subtitle: "3D Interactive Developer Portfolio",
+    category: "PORTFOLIO / 3D",
+    description:
+      "This very portfolio! A space-themed, 3D interactive developer portfolio with an orbiting tech stack, RAG-based AI chatbot powered by Gemini 1.5 Flash, contact form persistence, and stunning glassmorphism animations.",
+    image: "/projects/space-portfolio.png",
+    link: "https://space-portfolio-navy-xi.vercel.app/",
+    github: "https://github.com/Nand13112004/space-portfolio",
+    features: [
+      "3D orbiting tech logos with React Three Fiber",
+      "RAG AI chatbot with Gemini 1.5 Flash + MongoDB context",
+      "Contact form with real-time MongoDB persistence",
+      "Space-themed glassmorphism dark UI",
+      "Framer Motion micro-animations throughout",
+    ],
+    techStack: ["Next.js", "TypeScript", "Three.js", "Framer Motion", "MongoDB", "Gemini AI"],
   },
 ] as const;
 
@@ -360,5 +470,5 @@ export const NAV_LINKS = [
 ] as const;
 
 export const LINKS = {
-  sourceCode: "https://github.com/sanidhyy/space-portfolio",
+  Resume: "/Nand_Delvadiya_FullStack_resume.pdf",
 };

@@ -1,0 +1,11 @@
+Model Information:
+* title:	MongoDB Logo — 3D Model
+* source:	https://sketchfab.com/3d-models/mongodb-logo-3d-model-a8120d58c978422fbce435260409687e
+* author:	Alex human (https://sketchfab.com/alex-human)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "MongoDB Logo — 3D Model" (https://sketchfab.com/3d-models/mongodb-logo-3d-model-a8120d58c978422fbce435260409687e) by Alex human (https://sketchfab.com/alex-human) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
