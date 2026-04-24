@@ -40,13 +40,17 @@ export const Projects = () => {
   const resume = useCallback(() => { isPausedRef.current = false; }, []);
 
 
-  // Only duplicate once — 2 copies is sufficient for seamless infinite scroll
-  const duplicatedProjects = [...PROJECTS, ...PROJECTS];
+  // Use 3 copies for a truly infinite feel — we keep the scroll in the middle copy
+  const duplicatedProjects = [...PROJECTS, ...PROJECTS, ...PROJECTS];
 
   // Stable RAF loop — only runs once on mount
   useEffect(() => {
     const scroller = scrollerRef.current;
     if (!scroller) return;
+
+    // Start in the middle set for immediate infinite feel
+    const singleSetWidth = scroller.scrollWidth / 3;
+    scroller.scrollLeft = singleSetWidth;
 
     let lastTime = performance.now();
 
@@ -56,9 +60,11 @@ export const Projects = () => {
 
       if (!isPausedRef.current) {
         scroller.scrollLeft += deltaTime * 0.05;
-        const halfWidth = scroller.scrollWidth / 2;
-        if (scroller.scrollLeft >= halfWidth) {
-          scroller.scrollLeft -= halfWidth;
+        
+        const singleSetWidth = scroller.scrollWidth / 3;
+        // If we reach the start of the 3rd set, jump back to the start of the 2nd set
+        if (scroller.scrollLeft >= singleSetWidth * 2) {
+          scroller.scrollLeft -= singleSetWidth;
         }
       }
 

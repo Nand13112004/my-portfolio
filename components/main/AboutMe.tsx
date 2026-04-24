@@ -64,8 +64,8 @@ const VALUES = [
 ];
 
 const STATS = [
-  { value: "8.15", label: "CGPA" },
-  { value: "3+", label: "Projects" },
+  { value: "7.82", label: "CGPA" },
+  { value: "8+", label: "Projects" },
   { value: "2", label: "Internships" },
 ];
 

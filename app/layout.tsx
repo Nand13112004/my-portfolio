@@ -16,7 +16,12 @@ export const viewport: Viewport = {
   themeColor: "#030014",
 };
 
-export const metadata: Metadata = siteConfig;
+export const metadata: Metadata = {
+  ...siteConfig,
+  icons: {
+    icon: "/icon.png",
+  },
+};
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
