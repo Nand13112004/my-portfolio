@@ -47,12 +47,11 @@ Here is the folder structure of this app.
 ```bash
 space-portfolio/
   |- app/
-    |-- apple-icon.png
-    |-- favicon.ico
+    |-- api/
     |-- globals.css
-    |-- icon1.png
-    |-- icon2.png
+    |-- icon.png
     |-- layout.tsx
+    |-- logo.png
     |-- page.tsx
   |- components/
     |-- main/
@@ -62,9 +61,15 @@ space-portfolio/
   |- constants/
     |-- index.ts
   |- lib/
+    |-- mail.ts
+    |-- mongodb.ts
     |-- motion.ts
     |-- utils.ts
+  |- models/
+    |-- Contact.ts
   |- public/
+  |- scripts/
+    |-- seed.js
   |- .eslintrc.json
   |- .gitignore
   |- eslint.config.mjs
@@ -117,18 +122,28 @@ You might encounter some bugs while using this app. You are more than welcome to
 Useful resources and dependencies that are used in Space Portfolio.
 
 <!--- DEPENDENCIES_START --->
+- [@google/generative-ai](https://www.npmjs.com/package/@google/generative-ai): ^0.14.0
 - [@heroicons/react](https://www.npmjs.com/package/@heroicons/react): ^2.2.0
 - [@react-three/drei](https://www.npmjs.com/package/@react-three/drei): ^10.7.7
 - [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber): ^9.6.0
 - [@types/node](https://www.npmjs.com/package/@types/node): ^25
+- [@types/nodemailer](https://www.npmjs.com/package/@types/nodemailer): ^8.0.0
 - [@types/react](https://www.npmjs.com/package/@types/react): 19.2.14
 - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): 19.2.3
 - [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.5.0
+- [chromadb](https://www.npmjs.com/package/chromadb): ^3.4.3
 - [clsx](https://www.npmjs.com/package/clsx): ^2.1.1
+- [dotenv](https://www.npmjs.com/package/dotenv): ^17.4.2
 - [eslint](https://www.npmjs.com/package/eslint): ^10.2.1
 - [eslint-config-next](https://www.npmjs.com/package/eslint-config-next): 16.2.4
 - [framer-motion](https://www.npmjs.com/package/framer-motion): ^12.38.0
+- [lucide-react](https://www.npmjs.com/package/lucide-react): ^1.9.0
+- [mongodb](https://www.npmjs.com/package/mongodb): ^7.2.0
+- [mongoose](https://www.npmjs.com/package/mongoose): ^9.5.0
 - [next](https://www.npmjs.com/package/next): 16.2.4
+- [nodemailer](https://www.npmjs.com/package/nodemailer): ^8.0.6
+- [openai](https://www.npmjs.com/package/openai): ^6.34.0
+- [pdf-parse](https://www.npmjs.com/package/pdf-parse): ^2.4.5
 - [postcss](https://www.npmjs.com/package/postcss): ^8
 - [react](https://www.npmjs.com/package/react): 19.2.5
 - [react-dom](https://www.npmjs.com/package/react-dom): 19.2.5
