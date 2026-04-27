@@ -78,6 +78,7 @@
     "mongodb": "^7.2.0",
     "mongoose": "^9.5.0",
     "next": "16.2.4",
+    "nodemailer": "^8.0.6",
     "openai": "^6.34.0",
     "pdf-parse": "^2.4.5",
     "react": "19.2.5",
@@ -89,6 +90,7 @@
   },
   "devDependencies": {
     "@types/node": "^25",
+    "@types/nodemailer": "^8.0.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "autoprefixer": "^10.5.0",

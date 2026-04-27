@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import connectToDatabase from "@/lib/mongodb";
 import Contact from "@/models/Contact";
+import { sendContactEmail } from "@/lib/mail";
 
 export async function POST(req: Request) {
   try {
@@ -19,6 +20,15 @@ export async function POST(req: Request) {
       subject,
       message,
     });
+
+    // Send email notification
+    try {
+      await sendContactEmail(name, email, subject, message);
+    } catch (mailError) {
+      console.error("Error sending notification email:", mailError);
+      // We don't return an error to the user if the email fails, 
+      // since the message is already saved in the DB.
+    }
 
     return NextResponse.json({ success: true, data: newContact }, { status: 201 });
   } catch (error) {
